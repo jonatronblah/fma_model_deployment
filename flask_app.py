@@ -1,5 +1,6 @@
 from flask import Flask, flash, request, Response, redirect, abort
 from werkzeug import secure_filename
+from features_new import compute_features
 import os
 import requests
 import pickle
