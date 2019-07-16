@@ -1,0 +1,17 @@
+<title>genre classification</title>
+    <h1>Upload a song!</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <select name="genre" id="genreselector" method="GET" action="/">
+        <option value="{{genres[0]}}" selected>{{genres[0]}}</option>
+        {% for genre in genres[1:] %}
+        <option value="{{genre}}">{{genre}}</option>
+        {% endfor %}
+      </select>
+      <input type=submit value=Upload>
+    </form>
+<body>
+    Upload a mp3 or wav file and receive a genre prediction. Select a genre to provide data for model retraining. Be aware: feature extraction takes a few minutes - be patient!
+<br>
+    Model trained on the <a href="https://github.com/mdeff/fma">FMA Dataset</a>.
+</body>
